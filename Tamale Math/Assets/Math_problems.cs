@@ -2,21 +2,26 @@ using UnityEngine;
 using System.Collections.Generic;
 
 public class Question{
-    string q;
-    string a;
-    public Question(string q, string a)
+    string question;
+    string answer;
+    string[] multipleChoiceAnswers;
+    public Question(string q, string a, string[] multipleChoiceAnswers)
     {
-        this.q = q;
-        this.a = a;
-
+        this.question = q;
+        this.answer = a;
+        this.multipleChoiceAnswers = multipleChoiceAnswers;
     }
     public string getQuestion()
     {
-        return this.q;
+        return this.question;
     }
     public string getAnswer()
     {
-        return this.a;
+        return this.answer;
+    }
+    public string[] getMultipleChoiceAnswers()
+    {
+        return this.multipleChoiceAnswers;
     }
 }
 
