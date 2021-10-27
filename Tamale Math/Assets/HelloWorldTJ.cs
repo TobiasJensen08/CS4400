@@ -9,4 +9,14 @@ public class HelloWorldTJ : MonoBehaviour
     {
         Debug.Log("Hello, World. -- From Tobias Jensen");
     }
+
+    void Awake() {
+        Messenger.AddListener(GameEvent.ENEMY_HIT, OnEnemyHit);
+    }
+    void OnDestroy() {
+        Messenger.RemoveListener(GameEvent.ENEMY_HIT, OnEnemyHit);
+    }
+    private void OnEnemyHit(){
+        Debug.Log("Enemy Hit");
+    }
 }

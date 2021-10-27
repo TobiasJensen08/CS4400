@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-
+/*
 public class Question{
     string question;
     string answer;
@@ -158,7 +158,7 @@ public class FourdGrade : GradeLevel{
         this.questions.Add(new Question("337 - 334", "5")); 
 
     }
-}
+}*/
 
 
 
