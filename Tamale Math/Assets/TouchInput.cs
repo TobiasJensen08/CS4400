@@ -29,7 +29,9 @@ public class TouchInput : MonoBehaviour
 	{
 		// Store the swipe delta in a temp variable
 		var swipe = finger.SwipeScreenDelta;
-		
+
+		/*
+		//src: https://csharp.hotexamples.com/examples/-/Lean/-/php-lean-class-examples.html
 		if (swipe.x < -Mathf.Abs(swipe.y))
 		{
 			Debug.Log ("You swiped left!");
@@ -48,6 +50,20 @@ public class TouchInput : MonoBehaviour
 		if (swipe.y > Mathf.Abs(swipe.x))
 		{
 			Debug.Log ("You swiped up!");
+		}*/
+		
+		if(swipe.x>0 && swipe.y>0){
+			Debug.Log("Swiped Top-right");
+			Messenger.Broadcast(GameEvent.TOP_RIGHT);
+		} else if(swipe.x>0 && swipe.y<=0){
+			Debug.Log("Swiped Bottom-right");
+			Messenger.Broadcast(GameEvent.BOTTOM_RIGHT);
+		} else if(swipe.x<=0 && swipe.y<=0){
+			Debug.Log("Swiped Bottom-left");
+			Messenger.Broadcast(GameEvent.BOTTOM_LEFT);
+		} else{
+			Debug.Log("Swiped Top-left");
+			Messenger.Broadcast(GameEvent.TOP_LEFT);
 		}
 	}
 }
