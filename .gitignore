@@ -42,3 +42,5 @@ sysinfo.txt
 #Logs\shadercompiler-AssetImportWorker0.log
 #Logs\shadercompiler-UnityShaderCompiler.exe0.log
 #Logs\shadercompiler-UnityShaderCompiler*
+*/Logs/*
+*/UserSettings/*
