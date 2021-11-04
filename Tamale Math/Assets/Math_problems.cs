@@ -1,5 +1,17 @@
 using UnityEngine;
 using System.Collections.Generic;
+
+/*
+public class ClassName{
+    string question;
+    string[] answers;
+    int correctIndex;
+
+    [SerializeField] private Text questionDisplay;
+    [SerializeField] private Text topLeft;
+    // etc.
+}
+*/
 /*
 public class Question{
     string question;
