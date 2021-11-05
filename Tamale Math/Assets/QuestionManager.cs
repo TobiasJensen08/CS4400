@@ -9,10 +9,13 @@ using UnityEngine.EventSystems;
 public class QuestionManager : MonoBehaviour
 {
     public Question[] questions;
+    public int timerSpeed;
     private static List<Question> unusedQuestions;
     private int gameScore;
 
     [SerializeField] private TextMeshProUGUI ScoreBoard;
+    [SerializeField] private Image timerMeteor;
+
     [SerializeField] private TextMeshProUGUI questionText;
     [SerializeField] private TextMeshProUGUI topLeft;
     [SerializeField] private TextMeshProUGUI topRight;
@@ -25,19 +28,22 @@ public class QuestionManager : MonoBehaviour
 
     void Start()
     {
-        if (unusedQuestions == null)
+        var timer = timerMeteor.GetComponent<TimerMove>();
+        if (unusedQuestions == null || unusedQuestions.Count == 0)
         {
             unusedQuestions = questions.ToList<Question>();
             gameScore = 0;
             ScoreBoard.text = gameScore.ToString();
+            timer.HSpeed = timerSpeed;
         }
-        else if (unusedQuestions.Count == 0)
-        {
-            Debug.Log("OUT OF QUESTIONS.");
-            return;
-        }
+        //else if (unusedQuestions.Count == 0)
+        //{
+        //    Debug.Log("OUT OF QUESTIONS.");
+        //    return;
+        //}
         SetCurrentQuestion();
-        
+        timer.restart();
+
     }
 
     void SetCurrentQuestion()
@@ -62,7 +68,7 @@ public class QuestionManager : MonoBehaviour
         if ( answer == currentQuestion.correctAnswer)
         {
             Debug.Log(answer + " IS CORRECT");
-            gameScore += 100;
+            gameScore += 1000;
             ScoreBoard.text = gameScore.ToString();
             // Do something
         }

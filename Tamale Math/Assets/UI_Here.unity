@@ -239,7 +239,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.000083923, y: 0.0014954}
-  m_SizeDelta: {x: 691.6, y: 317.59}
+  m_SizeDelta: {x: 630, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &56738522
 MonoBehaviour:
@@ -288,7 +288,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
+  m_fontSize: 66.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -389,24 +389,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questions:
   - question: If 10x - 3 = 17, what is the value of x?
-    correctAnswer: 2.0
+    correctAnswer: 2
     wrongAnswer1: 2/10
     wrongAnswer2: 4
     wrongAnswer3: 2.5
-  - question: 3x = 24, x=?
+  - question: If 3x = 24, what is the value of x?
     correctAnswer: 8
     wrongAnswer1: 6
     wrongAnswer2: 12
     wrongAnswer3: 3
-  - question: Attorney A charges a fixed fee on $250 for an initial meeting and $150
-      per hour for all hours worked after that. Attorney B charges $150 for the initial
-      meeting and $175 per hour. Find the charge for 26 hours of work for each attorney.
-      Which is the better deal?
-    correctAnswer: Attorney A
-    wrongAnswer1: Attorney B
+  - question: Attorney A charges $250 for an initial meeting and $150 /hr after that.
+      Attorney B charges $150 for the initial meeting and $175 /hr. Which is the
+      better deal for a 26 hrs work?
+    correctAnswer: Attorney B
+    wrongAnswer1: Attorney A
     wrongAnswer2: They Charge the same
     wrongAnswer3: Not enough information
+  - question: 25 X 11 =
+    correctAnswer: 275
+    wrongAnswer1: 255
+    wrongAnswer2: 250
+    wrongAnswer3: 265
+  - question: What is the derivative of 3X?
+    correctAnswer: 3
+    wrongAnswer1: x^3
+    wrongAnswer2: 3/2x^2
+    wrongAnswer3: 0
+  - question: What is the smallest non-negative even number?
+    correctAnswer: 0
+    wrongAnswer1: 2
+    wrongAnswer2: 1
+    wrongAnswer3: It depends
+  timerSpeed: -30
   ScoreBoard: {fileID: 2126248242}
+  timerMeteor: {fileID: 1883295807}
   questionText: {fileID: 56738522}
   topLeft: {fileID: 1664580793}
   topRight: {fileID: 1332230171}
@@ -891,8 +907,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -65, y: -10}
-  m_SizeDelta: {x: -230, y: -120}
+  m_AnchoredPosition: {x: -60, y: 0}
+  m_SizeDelta: {x: -240, y: -240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &828986206
 MonoBehaviour:
@@ -1161,8 +1177,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 65, y: -10}
-  m_SizeDelta: {x: -230, y: -120}
+  m_AnchoredPosition: {x: 60, y: 0}
+  m_SizeDelta: {x: -240, y: -240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &876650196
 MonoBehaviour:
@@ -1306,13 +1322,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1970600816}
+  - {fileID: 1883295804}
   m_Father: {fileID: 1051104205}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.0000019073}
+  m_AnchoredPosition: {x: 0, y: -0}
   m_SizeDelta: {x: 600, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &918127772
@@ -1708,8 +1724,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 65, y: 10}
-  m_SizeDelta: {x: -230, y: -120}
+  m_AnchoredPosition: {x: 60, y: 0}
+  m_SizeDelta: {x: -240, y: -240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1332230171
 MonoBehaviour:
@@ -2328,8 +2344,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -65, y: 10}
-  m_SizeDelta: {x: -230, y: -120}
+  m_AnchoredPosition: {x: -60, y: 0}
+  m_SizeDelta: {x: -240, y: -240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1664580793
 MonoBehaviour:
@@ -2710,7 +2726,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: a27339738c63b7848a26fca5e1f654e5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54e1b562c3fea284f8a0ec8cdc70057c, type: 3}
---- !u!1 &1970600815
+--- !u!1 &1883295803
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2718,25 +2734,25 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1970600816}
-  - component: {fileID: 1970600818}
-  - component: {fileID: 1970600817}
-  - component: {fileID: 1970600820}
-  - component: {fileID: 1970600819}
+  - component: {fileID: 1883295804}
+  - component: {fileID: 1883295808}
+  - component: {fileID: 1883295807}
+  - component: {fileID: 1883295806}
+  - component: {fileID: 1883295805}
   m_Layer: 5
-  m_Name: Meteor
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1970600816
+--- !u!224 &1883295804
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1970600815}
+  m_GameObject: {fileID: 1883295803}
   m_LocalRotation: {x: 0, y: 0, z: -0.22495107, w: 0.9743701}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -2749,16 +2765,45 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: -4}
   m_SizeDelta: {x: 99.904175, y: 79.526}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1970600817
+--- !u!114 &1883295805
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1970600815}
+  m_GameObject: {fileID: 1883295803}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c911869bc40943cdb40de981673c843, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HSpeed: 0
+  HMin: -551
+--- !u!114 &1883295806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883295803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 3, y: -1}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1883295807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883295803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -2769,50 +2814,24 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 04f915520ca5b4f1dbc870c9acf90277, type: 3}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
---- !u!222 &1970600818
+  m_Sprite: {fileID: 21300000, guid: 04f915520ca5b4f1dbc870c9acf90277, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1883295808
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1970600815}
+  m_GameObject: {fileID: 1883295803}
   m_CullTransparentMesh: 1
---- !u!114 &1970600819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1970600815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c911869bc40943cdb40de981673c843, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HSpeed: -50
-  HMin: -560
---- !u!114 &1970600820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1970600815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 1, g: 0, b: 0, a: 1}
-  m_EffectDistance: {x: 3, y: -1}
-  m_UseGraphicAlpha: 1
 --- !u!1 &1971946019
 GameObject:
   m_ObjectHideFlags: 0
