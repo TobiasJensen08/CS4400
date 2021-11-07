@@ -9,20 +9,21 @@ public class TouchInput : MonoBehaviour
     
     void OnEnable()
 	{
-		LeanTouch.OnFingerTap += HandleFingerTap;
+		//LeanTouch.OnFingerTap += HandleFingerTap;
         LeanTouch.OnFingerSwipe += InterpretSwipe;
 	}
 
 	void OnDisable()
 	{
-		LeanTouch.OnFingerTap -= HandleFingerTap;
+		//LeanTouch.OnFingerTap -= HandleFingerTap;
         LeanTouch.OnFingerSwipe -= InterpretSwipe;
 	}
 
+/*
 	void HandleFingerTap(LeanFinger finger)
 	{
 		Debug.Log("You just tapped the screen with finger " + finger.Index + " at " + finger.ScreenPosition);
-	}
+	}*/
 
 
     public void InterpretSwipe(LeanFinger finger)
@@ -53,17 +54,30 @@ public class TouchInput : MonoBehaviour
 		}*/
 		
 		if(swipe.x>0 && swipe.y>0){
-			Debug.Log("Swiped Top-right");
-			Messenger.Broadcast(GameEvent.TOP_RIGHT);
+			TopRight();
 		} else if(swipe.x>0 && swipe.y<=0){
-			Debug.Log("Swiped Bottom-right");
-			Messenger.Broadcast(GameEvent.BOTTOM_RIGHT);
+			BottomRight();
 		} else if(swipe.x<=0 && swipe.y<=0){
-			Debug.Log("Swiped Bottom-left");
-			Messenger.Broadcast(GameEvent.BOTTOM_LEFT);
+			BottomLeft();
 		} else{
-			Debug.Log("Swiped Top-left");
-			Messenger.Broadcast(GameEvent.TOP_LEFT);
+			TopLeft();
 		}
+	}
+
+	public void TopRight(){
+		Debug.Log("Swiped Top-right");
+		Messenger.Broadcast(GameEvent.TOP_RIGHT);
+	}
+	public void BottomRight(){
+		Debug.Log("Swiped Bottom-right");
+		Messenger.Broadcast(GameEvent.BOTTOM_RIGHT);
+	}
+	public void BottomLeft(){
+		Debug.Log("Swiped Bottom-left");
+		Messenger.Broadcast(GameEvent.BOTTOM_LEFT);
+	}
+	public void TopLeft(){
+		Debug.Log("Swiped Top-left");
+		Messenger.Broadcast(GameEvent.TOP_LEFT);
 	}
 }
