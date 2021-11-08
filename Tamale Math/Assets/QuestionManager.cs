@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System.Linq;
 using TMPro;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class QuestionManager : MonoBehaviour
 {
@@ -78,5 +79,10 @@ public class QuestionManager : MonoBehaviour
         }
 
         Start();
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
