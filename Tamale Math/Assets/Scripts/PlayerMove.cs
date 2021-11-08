@@ -6,7 +6,7 @@ public class PlayerMove : MonoBehaviour
     public float accSprintMultiplier = 4; // how much faster you go when "sprinting"
     public float lookSensitivity = 1; // mouse look sensitivity
     public float dampingCoefficient = 5; // how quickly you break to a halt after you stop your input
-    public bool focusOnEnable = false; // whether or not to focus and lock cursor immediately on enable
+    public bool focusOnEnable = true; // whether or not to focus and lock cursor immediately on enable
 
     Vector3 velocity; // current velocity
 
