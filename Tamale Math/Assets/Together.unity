@@ -684,6 +684,104 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1 &492334627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 492334630}
+  - component: {fileID: 492334629}
+  - component: {fileID: 492334628}
+  m_Layer: 5
+  m_Name: GED Question Control
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &492334628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492334627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36bf2624fd79b4cf392c22131a3d1889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questions:
+  - question: If 10x - 3 = 17, what is the value of x?
+    correctAnswer: 2
+    wrongAnswer1: 2/10
+    wrongAnswer2: 4
+    wrongAnswer3: 2.5
+  - question: If 3x = 24, what is the value of x?
+    correctAnswer: 8
+    wrongAnswer1: 6
+    wrongAnswer2: 12
+    wrongAnswer3: 3
+  - question: Attorney A charges $250 for an initial meeting and $150 /hr after that.
+      Attorney B charges $150 for the initial meeting and $175 /hr. Which is the
+      better deal for a 26 hrs work?
+    correctAnswer: Attorney B
+    wrongAnswer1: Attorney A
+    wrongAnswer2: They Charge the same
+    wrongAnswer3: Not enough information
+  - question: 25 X 11 =
+    correctAnswer: 275
+    wrongAnswer1: 255
+    wrongAnswer2: 250
+    wrongAnswer3: 265
+  - question: What is the derivative of 3X?
+    correctAnswer: 3
+    wrongAnswer1: x^3
+    wrongAnswer2: 3/2x^2
+    wrongAnswer3: 0
+  - question: What is the smallest non-negative even number?
+    correctAnswer: 0
+    wrongAnswer1: 2
+    wrongAnswer2: 1
+    wrongAnswer3: It depends
+  timerSpeed: -30
+  ScoreBoard: {fileID: 1101169365}
+  timerMeteor: {fileID: 1468200254}
+  questionText: {fileID: 1434614256}
+  topLeft: {fileID: 1305848468}
+  topRight: {fileID: 825117241}
+  bottomLeft: {fileID: 1079726880}
+  bottomRight: {fileID: 89771354}
+--- !u!222 &492334629
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492334627}
+  m_CullTransparentMesh: 1
+--- !u!224 &492334630
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492334627}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.000061035156, y: -0.000030517578}
+  m_SizeDelta: {x: 100.16, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &593219817
 GameObject:
   m_ObjectHideFlags: 0
@@ -3418,7 +3516,7 @@ RectTransform:
   m_Children:
   - {fileID: 1335535393}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
