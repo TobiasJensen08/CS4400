@@ -27,6 +27,13 @@ public class QuestionManager : MonoBehaviour
     private Question currentQuestion;
     private List<string> currentAnswers;
 
+    private void Awake() {
+        Messenger<int>.AddListener(GameEvent.ANSWER, UserSelectButton);
+    }
+    private void OnDestroy() {
+        Messenger<int>.RemoveListener(GameEvent.ANSWER, UserSelectButton);
+    }
+
     void Start()
     {
         var timer = timerMeteor.GetComponent<TimerMove>();

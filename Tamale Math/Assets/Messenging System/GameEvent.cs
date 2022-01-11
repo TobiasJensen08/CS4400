@@ -8,8 +8,9 @@ public static class GameEvent {
           public const string SPEED_CHANGED = "SPEED_CHANGED";
 
     //What we will use
-    public const string TOP_LEFT = "TOP_LEFT";
+    /*public const string TOP_LEFT = "TOP_LEFT";
     public const string TOP_RIGHT = "TOP_RIGHT";
     public const string BOTTOM_RIGHT = "BOTTOM_RIGHT";
-    public const string BOTTOM_LEFT = "BOTTOM_LEFT";
+    public const string BOTTOM_LEFT = "BOTTOM_LEFT";*/
+    public const string ANSWER = "ANSWER";
 }

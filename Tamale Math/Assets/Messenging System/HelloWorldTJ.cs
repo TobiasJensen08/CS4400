@@ -11,12 +11,13 @@ public class HelloWorldTJ : MonoBehaviour
     }
 
     void Awake() {
-        Messenger.AddListener(GameEvent.ENEMY_HIT, OnEnemyHit);
+        //To specify parameters, add <> after "Messenger> and specify datatypes. Just have "Messenger" for no parameters
+        Messenger<int>.AddListener(GameEvent.ENEMY_HIT, OnEnemyHit);
     }
     void OnDestroy() {
-        Messenger.RemoveListener(GameEvent.ENEMY_HIT, OnEnemyHit);
+        Messenger<int>.RemoveListener(GameEvent.ENEMY_HIT, OnEnemyHit);
     }
-    private void OnEnemyHit(){
-        Debug.Log("Enemy Hit");
+    private void OnEnemyHit(int i){
+        Debug.Log("Enemy Hit "+i);
     }
 }
