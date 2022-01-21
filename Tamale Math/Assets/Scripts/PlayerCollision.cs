@@ -13,7 +13,7 @@ public class PlayerCollision : MonoBehaviour
     }
     void OnCollisionEnter(Collision collisionInfo)
     {
-        if (collisionInfo.collider.tag == "Enemy")
+        if (collisionInfo.collider.tag == "Target")
         {
             FindObjectOfType<GameManager>().ShowThirdPersonCamera();
 
