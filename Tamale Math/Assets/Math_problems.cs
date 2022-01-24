@@ -24,7 +24,6 @@ public class Question{
         return this.multipleChoiceAnswers;
     }
 }
-
 public abstract class GradeLevel
 {
     protected List<Question> questions;
@@ -37,7 +36,6 @@ public abstract class GradeLevel
         }
         return "It's time to Level Up!!!";
     }
-
     public bool isCorrectAnser(string answer)
     {
         if(questions[currentIdx].getAnswer() == answer)
@@ -52,7 +50,6 @@ public abstract class GradeLevel
         return currentIdx == questions.Count;
     }
 }
-
 public class Kindergarten : GradeLevel
 {
     public Kindergarten(){
@@ -79,7 +76,6 @@ public class Kindergarten : GradeLevel
           
     }
 }
-
 public class FirstGrade : GradeLevel
 {
     public FirstGrade()
@@ -99,7 +95,6 @@ public class FirstGrade : GradeLevel
         this.questions.Add(new Question("9 - 2", "5"));           
     }
 }
-
 public class SecondGrade : GradeLevel{
     public SecondGrade()
     {
@@ -118,11 +113,8 @@ public class SecondGrade : GradeLevel{
         this.questions.Add(new Question("14 - 2", "12")); 
    
     }
-
 }
-
 public class ThirdGrade : GradeLevel{
-
     public ThirdGrade(){
         this.questions = new List<Question>();
         this.questions.Add(new Question("x + 3 < 14", "5"));
@@ -137,11 +129,9 @@ public class ThirdGrade : GradeLevel{
         this.questions.Add(new Question("801 - 99", "702")); 
         this.questions.Add(new Question("859 - 54", "804"));
         this.questions.Add(new Question("337 + 334", "678")); 
-
     }
 }
 public class FourdGrade : GradeLevel{
-
     public FourdGrade(){
         this.questions = new List<Question>();
         this.questions.Add(new Question("9 + 3 + 2 + 8", "21"));
@@ -156,10 +146,5 @@ public class FourdGrade : GradeLevel{
         this.questions.Add(new Question("801 + 99", "900")); 
         this.questions.Add(new Question("85 + 540", "543"));
         this.questions.Add(new Question("337 - 334", "5")); 
-
     }
 }*/
-
-
-
-
