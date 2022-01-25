@@ -24,6 +24,12 @@ public class PlayerCollision : MonoBehaviour
 
             FindObjectOfType<GameManager>().EndGame();
         }
+    }
+    void OnTriggerEnter(Collider other) {
+        QuestionPrompt();
+    }
 
+    void QuestionPrompt(){
+        Debug.Log("Prompt");
     }
 }

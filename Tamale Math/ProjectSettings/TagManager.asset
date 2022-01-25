@@ -8,6 +8,8 @@ TagManager:
   - Explosion
   - Cockpit
   - Explode
+  - Target
+  - Question Prompt
   layers:
   - Default
   - TransparentFX
