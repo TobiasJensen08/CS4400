@@ -12,4 +12,6 @@ public static class GameEvent {
     public const string TOP_RIGHT = "TOP_RIGHT";
     public const string BOTTOM_RIGHT = "BOTTOM_RIGHT";
     public const string BOTTOM_LEFT = "BOTTOM_LEFT";
+
+    public const string ANSWER = "ANSWER";
 }

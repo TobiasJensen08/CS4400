@@ -54,16 +54,16 @@ public class TouchInput : MonoBehaviour
 		
 		if(swipe.x>0 && swipe.y>0){
 			Debug.Log("Swiped Top-right");
-			Messenger.Broadcast(GameEvent.TOP_RIGHT);
+			Messenger<int>.Broadcast(GameEvent.ANSWER, 1);
 		} else if(swipe.x>0 && swipe.y<=0){
 			Debug.Log("Swiped Bottom-right");
-			Messenger.Broadcast(GameEvent.BOTTOM_RIGHT);
+			Messenger<int>.Broadcast(GameEvent.ANSWER, 2);
 		} else if(swipe.x<=0 && swipe.y<=0){
 			Debug.Log("Swiped Bottom-left");
-			Messenger.Broadcast(GameEvent.BOTTOM_LEFT);
+			Messenger<int>.Broadcast(GameEvent.ANSWER, 3);
 		} else{
 			Debug.Log("Swiped Top-left");
-			Messenger.Broadcast(GameEvent.TOP_LEFT);
+			Messenger<int>.Broadcast(GameEvent.ANSWER, 0);
 		}
 	}
 }

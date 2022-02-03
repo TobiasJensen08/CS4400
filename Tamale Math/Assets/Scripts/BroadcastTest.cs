@@ -7,6 +7,7 @@ public class BroadcastTest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Messenger.Broadcast(GameEvent.ENEMY_HIT);
+        //Messenger<parameterType>.Broadcast<callbackReturnType>(GameEvent.ENEMY_HIT);
+        Messenger<int>.Broadcast(GameEvent.ENEMY_HIT,1);
     }
 }

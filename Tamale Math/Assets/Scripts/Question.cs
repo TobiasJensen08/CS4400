@@ -5,7 +5,7 @@ public class Questions
 {
     public string content;
     // the correct answer is always the first item in the list
-    public string choices[];
+    //public string choices[];//was causing bugs
 }
 
 public class QuestionManager
