@@ -4,7 +4,7 @@ using UnityEngine;
 
 using Lean.Touch;
 
-public class TouchInput : MonoBehaviour
+public class UserInput : MonoBehaviour
 {
     
     void OnEnable()
@@ -54,16 +54,33 @@ public class TouchInput : MonoBehaviour
 		
 		if(swipe.x>0 && swipe.y>0){
 			Debug.Log("Swiped Top-right");
-			Messenger<int>.Broadcast(GameEvent.ANSWER, 1);
+			ClickTopRight();
 		} else if(swipe.x>0 && swipe.y<=0){
 			Debug.Log("Swiped Bottom-right");
-			Messenger<int>.Broadcast(GameEvent.ANSWER, 2);
+			ClickBottomRight();
 		} else if(swipe.x<=0 && swipe.y<=0){
 			Debug.Log("Swiped Bottom-left");
-			Messenger<int>.Broadcast(GameEvent.ANSWER, 3);
+			ClickBottomLeft();
 		} else{
 			Debug.Log("Swiped Top-left");
-			Messenger<int>.Broadcast(GameEvent.ANSWER, 0);
+			ClickTopLeft();
 		}
+	}
+
+	public void ClickTopLeft()
+	{
+		Messenger<int>.Broadcast(GameEvent.ANSWER, 0);
+	}
+	public void ClickTopRight()
+	{
+		Messenger<int>.Broadcast(GameEvent.ANSWER, 1);
+	}
+	public void ClickBottomRight()
+	{
+		Messenger<int>.Broadcast(GameEvent.ANSWER, 2);
+	}
+	public void ClickBottomLeft()
+	{
+		Messenger<int>.Broadcast(GameEvent.ANSWER, 3);
 	}
 }

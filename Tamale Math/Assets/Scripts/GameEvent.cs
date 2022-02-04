@@ -14,4 +14,6 @@ public static class GameEvent {
     public const string BOTTOM_LEFT = "BOTTOM_LEFT";
 
     public const string ANSWER = "ANSWER";
+    public const string CORRECT_ANSWER = "C_A";
+    public const string WRONG_ANSER = "W_A";
 }

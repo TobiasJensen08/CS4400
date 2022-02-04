@@ -1,11 +1,16 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+
 public class GameManager : MonoBehaviour
 {
     bool gameHasEnded = false;
     public float restartDelay = 10f;
     public Camera PlayerCamera;
     public Camera ThirdPersonCamera;
+
 
     // Call this function to disable FPS camera,
     // and enable overhead camera.
