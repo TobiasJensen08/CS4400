@@ -848,7 +848,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0.69803923}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -2296,6 +2296,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1542317792}
   - component: {fileID: 1542317793}
+  - component: {fileID: 1542317794}
   m_Layer: 5
   m_Name: BottomBar
   m_TagString: Untagged
@@ -2375,6 +2376,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1542317794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542317791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f777025ff4e5d4a1d81058eff875f8e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 1542317793}
+  isCounting: 0
 --- !u!1 &1551459403
 GameObject:
   m_ObjectHideFlags: 0
@@ -2462,6 +2477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97226b23d107e4ef1ada223dc2c4d60e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreBoard: {fileID: 1186375916}
   MathQuestion: {fileID: 993283897}
   TopLeft: {fileID: 170889737}
   TopRight: {fileID: 54689661}
