@@ -5,11 +5,17 @@ public class PlayerCollision : MonoBehaviour
     public PlayerMove movement;
     public GameObject ShipExplosion;
     public GameObject Cockpit;
+    private Canvas UI;
 
     void Start()
     {
         ShipExplosion.SetActive(true);
         ShipExplosion.SetActive(false);
+
+        this.UI = GameObject.Find("UI").GetComponent<Canvas>();
+        this.UI.enabled = false;
+        //Speed is governed in AlignWithTarget.cs
+        movement.moveSpeed = 0.0f;
     }
     void OnCollisionEnter(Collision collisionInfo)
     {
@@ -25,11 +31,15 @@ public class PlayerCollision : MonoBehaviour
             FindObjectOfType<GameManager>().EndGame();
         }
     }
+
+
+    //Detection of Question Prompts
     void OnTriggerEnter(Collider other) {
         QuestionPrompt();
     }
 
     void QuestionPrompt(){
-        Debug.Log("Prompt");
+        UI.enabled = !UI.enabled;
+        Messenger.Broadcast(GameEvent.PAUSE);
     }
 }
