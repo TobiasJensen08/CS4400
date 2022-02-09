@@ -32,7 +32,7 @@ public class Hovl_DemoLasers : MonoBehaviour
         if (Screen.dpi < 200) windowDpi = 1;
         else windowDpi = Screen.dpi / 200f;
     }
-
+    /*
     void Update()
     {
         //Enable lazer
@@ -46,6 +46,22 @@ public class Hovl_DemoLasers : MonoBehaviour
         //Disable lazer prefab
         if (Input.GetMouseButtonUp(0))
         {
+            if (LaserScript) LaserScript.DisablePrepare();
+            if (LaserScript2) LaserScript2.DisablePrepare();
+            Destroy(Instance,1);
+        }
+    }*/
+    private float countdown;
+    public void FireLaser(){
+        Destroy(Instance);
+        Instance = Instantiate(Prefabs[Prefab], FirePoint.transform.position, FirePoint.transform.rotation);
+        Instance.transform.parent = transform;
+        countdown = 1.0f;
+    }
+    private void Update() {
+        countdown -= Time.deltaTime;
+        if(countdown<=0){
+            countdown=0;
             if (LaserScript) LaserScript.DisablePrepare();
             if (LaserScript2) LaserScript2.DisablePrepare();
             Destroy(Instance,1);

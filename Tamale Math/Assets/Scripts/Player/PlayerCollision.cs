@@ -33,8 +33,17 @@ public class PlayerCollision : MonoBehaviour
     }
 
 
+    void FireLaser(){
+        Debug.Log("Fire");
+        var blaster1 = GameObject.Find("Blaster1");
+        var blaster2 = GameObject.Find("Blaster2");
+        blaster1.GetComponent<Hovl_DemoLasers>().FireLaser();
+        blaster2.GetComponent<Hovl_DemoLasers>().FireLaser();
+    }
     //Detection of Question Prompts
     void OnTriggerEnter(Collider other) {
+        Debug.Log("Prompt");
+        //FireLaser();
         QuestionPrompt();
     }
 
@@ -42,4 +51,13 @@ public class PlayerCollision : MonoBehaviour
         UI.enabled = !UI.enabled;
         Messenger.Broadcast(GameEvent.PAUSE);
     }
+
+    //Listen for correct answer
+    private void Awake() {
+        Messenger.AddListener("CORRECT_ANSWER", FireLaser);
+    }
+    private void OnDestroy() {
+        Messenger.RemoveListener("CORRECT_ANSWER", FireLaser);
+    }
+
 }

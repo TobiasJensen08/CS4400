@@ -53,11 +53,16 @@ public class AlignWithTarget : MonoBehaviour
         //Listening for Events
     private void Awake() {
         Messenger.AddListener("PAUSE", Pause);
+        Messenger.AddListener("UNPAUSE",Unpause);
     }
     private void OnDestroy() {
         Messenger.RemoveListener("PAUSE", Pause);
+        Messenger.RemoveListener("UNPAUSE", Unpause);
     }
     private void Pause(){
         this.speed = 0.0f;
+    }
+    private void Unpause(){
+        this.speed=1.0f;
     }
 }

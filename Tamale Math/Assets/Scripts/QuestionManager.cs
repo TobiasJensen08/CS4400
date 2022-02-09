@@ -95,7 +95,6 @@ public class QuestionManager : MonoBehaviour
         TopRight.text = currentQuestion.choices[ranLyst[1]];
         BottomRight.text = currentQuestion.choices[ranLyst[2]];
         BottomLeft.text = currentQuestion.choices[ranLyst[3]];
-
     }
 
     void UserSelect(int choice)
@@ -105,13 +104,17 @@ public class QuestionManager : MonoBehaviour
             currentAnswer = -1;
             UpdateScore();
             Debug.Log("Right Answer!");
+            Messenger.Broadcast("CORRECT_ANSWER");
             // Messenger.Broadcast(GameEvent.CORRECT_ANSWER);
         } else
         {
+            Debug.Log("Wrong");
             // Messenger.Broadcast(GameEvent.WRONG_ANSER);
         }
 
         StartCoroutine(TransitionToNextQuestion());
+        GameObject.Find("UI").GetComponent<Canvas>().enabled=false;
+        Messenger.Broadcast("UNPAUSE");
     }
 
     void UpdateScore(int amount = 1000)
@@ -127,9 +130,12 @@ public class QuestionManager : MonoBehaviour
         scoreBoard.text = string.Format("{0:n0}", currentScore);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    //Listeners for broadcast events
+    private void Awake() {
+        //Messenger.AddListener(GameEvent.PROMPT);
+        Messenger<int>.AddListener(GameEvent.ANSWER, UserSelect);
+    }
+    private void OnDestroy() {
+        Messenger<int>.RemoveListener(GameEvent.ANSWER, UserSelect);
     }
 }
