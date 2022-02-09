@@ -52,14 +52,14 @@ public class AlignWithTarget : MonoBehaviour
 
         //Listening for Events
     private void Awake() {
-        Messenger.AddListener("PAUSE", Pause);
+        Messenger.AddListener("PAUSE", Stop);
         Messenger.AddListener("UNPAUSE",Unpause);
     }
     private void OnDestroy() {
-        Messenger.RemoveListener("PAUSE", Pause);
+        Messenger.RemoveListener("PAUSE", Stop);
         Messenger.RemoveListener("UNPAUSE", Unpause);
     }
-    private void Pause(){
+    public void Stop(){
         this.speed = 0.0f;
     }
     private void Unpause(){

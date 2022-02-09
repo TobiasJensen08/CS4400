@@ -19,6 +19,7 @@ public class PlayerCollision : MonoBehaviour
     }
     void OnCollisionEnter(Collision collisionInfo)
     {
+        //Player Death
         if (collisionInfo.collider.tag == "Target")
         {
             FindObjectOfType<GameManager>().ShowThirdPersonCamera();
@@ -29,6 +30,8 @@ public class PlayerCollision : MonoBehaviour
             Debug.Log("Astroid Hit!");
 
             FindObjectOfType<GameManager>().EndGame();
+
+            this.GetComponent<AlignWithTarget>().Stop();
         }
     }
 
