@@ -14,7 +14,7 @@ public class QuestionManager : MonoBehaviour
     private Question currentQuestion;
     private int currentAnswer;
 
-    private float DelayTime = 0.3f;
+    private float DelayTime = 1f;
 
     [SerializeField]
     private TextMeshProUGUI scoreBoard;
@@ -99,22 +99,28 @@ public class QuestionManager : MonoBehaviour
 
     void UserSelect(int choice)
     {
-        if (choice == currentAnswer)
+        Canvas UI = GameObject.Find("Panel").GetComponent<Canvas>();
+        if (UI.enabled)
         {
-            currentAnswer = -1;
-            UpdateScore();
-            Debug.Log("Right Answer!");
-            Messenger.Broadcast("CORRECT_ANSWER");
-            // Messenger.Broadcast(GameEvent.CORRECT_ANSWER);
-        } else
-        {
-            Debug.Log("Wrong");
-            // Messenger.Broadcast(GameEvent.WRONG_ANSER);
-        }
+            if (choice == currentAnswer)
+            {
+                currentAnswer = -1;
+                UpdateScore();
+                Debug.Log("Right Answer!");
+                Messenger.Broadcast("CORRECT_ANSWER");
+                // Messenger.Broadcast(GameEvent.CORRECT_ANSWER);
+            }
+            else
+            {
+                Debug.Log("Wrong");
+                // Messenger.Broadcast(GameEvent.WRONG_ANSER);
+            }
 
-        StartCoroutine(TransitionToNextQuestion());
-        GameObject.Find("UI").GetComponent<Canvas>().enabled=false;
-        Messenger.Broadcast("UNPAUSE");
+            UI.enabled = false;
+            Messenger.Broadcast("UNPAUSE");
+            StartCoroutine(TransitionToNextQuestion());
+
+        }
     }
 
     void UpdateScore(int amount = 1000)

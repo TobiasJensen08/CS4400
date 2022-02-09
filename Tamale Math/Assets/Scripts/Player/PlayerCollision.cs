@@ -12,7 +12,7 @@ public class PlayerCollision : MonoBehaviour
         ShipExplosion.SetActive(true);
         ShipExplosion.SetActive(false);
 
-        this.UI = GameObject.Find("UI").GetComponent<Canvas>();
+        this.UI = GameObject.Find("Panel").GetComponent<Canvas>();
         this.UI.enabled = false;
         //Speed is governed in AlignWithTarget.cs
         movement.moveSpeed = 0.0f;
