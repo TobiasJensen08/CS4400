@@ -24,6 +24,9 @@ public class HittedObject : MonoBehaviour {
 
     public void TakeDamage(float amount)
     {
+        if (TargetExplosion == null){
+            TargetExplosion = new GameObject();
+        }
         health -= amount;
         if(health <= 0)
         {
