@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bc52364fb206048059d7d3dde938ef24
+guid: ec17695d5c64e4a3e94c225c925cb784
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Ayuthaya
+  - Spaced
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
