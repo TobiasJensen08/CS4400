@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame ()
     {
         //TODO: Get the current level selection and load the approprate level scene
-        currentLevel = "Demo";
+        currentLevel = "Dynamic Generation";
         SceneManager.LoadScene(currentLevel);
     }
 
