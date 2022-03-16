@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HittedObject : MonoBehaviour {
+public class HittedObject1 : MonoBehaviour {
 
     public float startHealth = 1;
     private float health;
@@ -32,20 +32,10 @@ public class HittedObject : MonoBehaviour {
         {
             TargetExplosion.SetActive(true);
             //Debug.Log("Astroid Destroyed!");
-            Debug.Log(this.gameObject.transform.parent.gameObject.name);
-            //StartCoroutine(DestroyParent());
-            this.gameObject.transform.parent.gameObject.GetComponent<SelfDestruct>().DestroySelf();
             gameObject.SetActive(false);
-            Destroy(gameObject);
-            FindObjectOfType<AlignWithTarget>().NextTarget();
-            
+            Debug.Log(this.gameObject.transform.parent.name);
+            Destroy(this.gameObject.transform.parent.gameObject);
+            //FindObjectOfType<AlignWithTarget>().NextTarget();
         }
     }
-
-
-    /*IEnumerator DestroyParent()
-    {
-        yield return new WaitForSeconds(5);
-        Destroy(this.gameObject.transform.parent.gameObject);
-    }*/
 }

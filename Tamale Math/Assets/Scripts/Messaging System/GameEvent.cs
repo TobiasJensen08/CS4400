@@ -20,4 +20,7 @@ public static class GameEvent {
     public const string PAUSE = "PAUSE";
     public const string UNPAUSE = "UNPAUSE";
     public const string PROMPT = "PROMPT";
+
+    //Asteroid Events
+    public const string AST_OUT_BOUNDS = "OUT_OF_BOUNDS";
 }

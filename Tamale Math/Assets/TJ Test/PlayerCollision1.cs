@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerCollision : MonoBehaviour
+public class PlayerCollision1 : MonoBehaviour
 {
     public PlayerMove movement;
     public GameObject ShipExplosion;
@@ -15,7 +15,7 @@ public class PlayerCollision : MonoBehaviour
         UI = GameObject.Find("Panel").GetComponent<Canvas>();
         UI.enabled = false;
         //Speed is governed in AlignWithTarget.cs
-        //movement.moveSpeed = 0.0f;
+        movement.moveSpeed = 0.0f;
     }
     void OnCollisionEnter(Collision collisionInfo)
     {
@@ -33,7 +33,7 @@ public class PlayerCollision : MonoBehaviour
 
             FindObjectOfType<GameManager>().EndGame();
 
-            //this.GetComponent<AlignWithTarget>().Stop();
+            this.GetComponent<AlignWithTarget>().Stop();
         }
     }
 
@@ -47,16 +47,18 @@ public class PlayerCollision : MonoBehaviour
         blaster1.GetComponent<AudioSource>().Play();
         blaster2.GetComponent<Hovl_DemoLasers>().FireLaser();
         blaster2.GetComponent<AudioSource>().Play();
+
+        
     }
     //Detection of Question Prompts
     void OnTriggerEnter(Collider other) {
+        //FireLaser();
         QuestionPrompt();
     }
 
     void QuestionPrompt(){
         UI.enabled = !UI.enabled;
-        //Messenger.Broadcast(GameEvent.PAUSE);
-        Messenger.Broadcast(GameEvent.PROMPT);
+        Messenger.Broadcast(GameEvent.PAUSE);
     }
 
     //Listen for correct answer

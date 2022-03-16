@@ -138,7 +138,6 @@ public class QuestionManager : MonoBehaviour
 
     //Listeners for broadcast events
     private void Awake() {
-        //Messenger.AddListener(GameEvent.PROMPT);
         Messenger<int>.AddListener(GameEvent.ANSWER, UserSelect);
     }
     private void OnDestroy() {

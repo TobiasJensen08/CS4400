@@ -4,10 +4,11 @@ public class PlayerMove : MonoBehaviour
 {
     public float moveSpeed = 3;
     public float leftRightSpeed = 4;
+    private float currSpeed;
 
     void Update()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * moveSpeed, Space.World);
+        transform.Translate(Vector3.forward * Time.deltaTime * currSpeed, Space.World);
         if (Input.GetKey(KeyCode.A)){
             if (this.gameObject.transform.position.x > LevelBoundary.leftSide){
                 transform.Translate(Vector3.left * Time.deltaTime * leftRightSpeed);
@@ -18,6 +19,28 @@ public class PlayerMove : MonoBehaviour
                 transform.Translate(Vector3.left * Time.deltaTime * leftRightSpeed * -1);
             }
         }
+    }
+
+    private void Awake()
+    {
+        currSpeed = moveSpeed;
+        //Messenger.AddListener("PAUSE", Stop);
+        Messenger.AddListener("PROMPT", Stop);
+        Messenger.AddListener("UNPAUSE", Unpause);
+    }
+    private void OnDestroy()
+    {
+        //Messenger.RemoveListener("PAUSE", Stop);
+        Messenger.RemoveListener("UNPAUSE", Unpause);
+        Messenger.RemoveListener("PROMPT", Stop);
+    }
+    public void Stop()
+    {
+        currSpeed = 0.0f;
+    }
+    private void Unpause()
+    {
+        currSpeed = moveSpeed;
     }
 
 
