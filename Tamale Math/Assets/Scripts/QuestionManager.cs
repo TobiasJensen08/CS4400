@@ -8,8 +8,13 @@ using TMPro;
 public class QuestionManager : MonoBehaviour
 {
     public List<Question> questions = new List<Question>();
-    public static List<Question> unanswered;
-    private static int currentScore;
+
+    //Static variables persist when scene is changed. Avoid using them.
+    //public static List<Question> unanswered;
+    //private static int currentScore;
+
+    public List<Question> unanswered;
+    private int currentScore;
 
     private Question currentQuestion;
     private int currentAnswer;
@@ -33,12 +38,13 @@ public class QuestionManager : MonoBehaviour
     void Start()
     {
         UpdateScore(0);
-        Messenger<int>.AddListener(GameEvent.ANSWER, UserSelect);
+        //Messenger<int>.AddListener(GameEvent.ANSWER, UserSelect);
         UpdateQuestion();
     }
 
     public void UpdateQuestion()
     {
+        Debug.Log("Update Question");
         if (unanswered == null || unanswered.Count == 0)
         {
             LoadQuestions();
@@ -90,6 +96,7 @@ public class QuestionManager : MonoBehaviour
         var ranLyst = lyst.OrderBy(x => Random.value).ToList();
         currentAnswer = ranLyst.IndexOf(0);
         Debug.Log("Current Answer: "+currentQuestion.choices[ranLyst[currentAnswer]]);
+        Debug.Log("Answer Index: " + currentAnswer);
 
         TopLeft.text = currentQuestion.choices[ranLyst[0]];
         TopRight.text = currentQuestion.choices[ranLyst[1]];
@@ -97,8 +104,10 @@ public class QuestionManager : MonoBehaviour
         BottomLeft.text = currentQuestion.choices[ranLyst[3]];
     }
 
+    //User selects an option, ie. answer is made
     void UserSelect(int choice)
     {
+        Debug.Log("You answered index: " + choice);
         Canvas UI = GameObject.Find("Panel").GetComponent<Canvas>();
         if (UI.enabled)
         {
@@ -118,7 +127,8 @@ public class QuestionManager : MonoBehaviour
 
             UI.enabled = false;
             Messenger.Broadcast("UNPAUSE");
-            StartCoroutine(TransitionToNextQuestion());
+            //StartCoroutine(TransitionToNextQuestion());
+            UpdateQuestion();
 
         }
     }

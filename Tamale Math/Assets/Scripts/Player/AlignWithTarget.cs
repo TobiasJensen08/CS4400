@@ -24,7 +24,7 @@ public class AlignWithTarget : MonoBehaviour
     {
             target = FindTarget();
             transform.position = Vector3.MoveTowards(transform.position, target.position, (float)speed);
-            Debug.Log(target.transform.position);
+            //Debug.Log(target.transform.position);
     }
 
     public Transform FindTarget()

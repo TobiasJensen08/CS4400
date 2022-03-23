@@ -16,11 +16,6 @@ public class HittedObject : MonoBehaviour {
         TargetExplosion.SetActive(true);
         TargetExplosion.SetActive(false);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     public void TakeDamage(float amount)
     {
@@ -31,9 +26,6 @@ public class HittedObject : MonoBehaviour {
         if(health <= 0)
         {
             TargetExplosion.SetActive(true);
-            //Debug.Log("Astroid Destroyed!");
-            Debug.Log(this.gameObject.transform.parent.gameObject.name);
-            //StartCoroutine(DestroyParent());
             this.gameObject.transform.parent.gameObject.GetComponent<SelfDestruct>().DestroySelf();
             gameObject.SetActive(false);
             Destroy(gameObject);
@@ -41,11 +33,4 @@ public class HittedObject : MonoBehaviour {
             
         }
     }
-
-
-    /*IEnumerator DestroyParent()
-    {
-        yield return new WaitForSeconds(5);
-        Destroy(this.gameObject.transform.parent.gameObject);
-    }*/
 }
