@@ -32,6 +32,7 @@ public class PauseMenu : MonoBehaviour
     }
     public void LoadMainMenu ()
     {
+        Messenger.Broadcast("SCENE_SWITCH");
         SceneManager.LoadScene("MainMenu");
     }
 }

@@ -9,8 +9,8 @@ public class PlayerCollision : MonoBehaviour
 
     void Start()
     {
-        ShipExplosion.SetActive(true);
-        ShipExplosion.SetActive(false);
+        /*ShipExplosion.SetActive(true);
+        ShipExplosion.SetActive(false);*/
 
         UI = GameObject.Find("Panel").GetComponent<Canvas>();
         UI.enabled = false;
@@ -19,8 +19,6 @@ public class PlayerCollision : MonoBehaviour
     }
     void OnCollisionEnter(Collision collisionInfo)
     {
-        Debug.Log("Collision");
-        Debug.Log(collisionInfo.collider.tag=="Target");
         //Player Death
         if (collisionInfo.collider.tag == "Target")
         {
@@ -29,17 +27,13 @@ public class PlayerCollision : MonoBehaviour
             ShipExplosion.SetActive(true);
             Cockpit.SetActive(false);
             movement.enabled = false;
-            Debug.Log("Astroid Hit!");
 
             FindObjectOfType<GameManager>().EndGame();
-
-            //this.GetComponent<AlignWithTarget>().Stop();
         }
     }
 
 
     void FireLaser(){
-        Debug.Log("Fire");
         var blaster1 = GameObject.Find("Blaster1");
         var blaster2 = GameObject.Find("Blaster2");
 

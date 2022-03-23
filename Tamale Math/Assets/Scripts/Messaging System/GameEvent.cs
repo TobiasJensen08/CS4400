@@ -23,4 +23,5 @@ public static class GameEvent {
 
     //Asteroid Events
     public const string AST_OUT_BOUNDS = "OUT_OF_BOUNDS";
+    public const string SCENE_SWITCH = "SCENE_SWITCH";
 }

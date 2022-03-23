@@ -43,6 +43,13 @@ public class AsteroidSetup : MonoBehaviour
     private void OnDestroy()
     {
         Messenger.RemoveListener("CORRECT_ANSWER", CreatePromptingAsteroid);
+        /*asteroids.ForEach(delegate (GameObject asteroid)
+        {
+            Destroy(asteroid);
+
+        });*/
+        
+        asteroids.Clear();//Prevents null reference exceptions
     }
 
     private void CreatePromptingAsteroid()
