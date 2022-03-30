@@ -6,6 +6,7 @@ public class SelfDestruct : MonoBehaviour
 {
     public void DestroySelf()
     {
+        this.GetComponent<AudioSource>().Play();
         StartCoroutine(DelayedDestruction());
     }
 
