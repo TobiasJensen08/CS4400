@@ -19,7 +19,12 @@ public class CountDownTimer : MonoBehaviour
    {
        currentTime -= 1 * Time.deltaTime;
        countdowntimerText.text = currentTime.ToString();
-   }
+
+       countdowntimerText.color = Color.red;
+
+       if(currentTime <= 0){
+           currentTime = 00;
+       }   }
 
    
 }
