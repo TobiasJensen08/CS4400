@@ -21,18 +21,23 @@ public class TimerCountDown : MonoBehaviour
             StartCoroutine(TimerTaker());
         }
     }
-
-
     IEnumerator TimerTaker()
     {
-        takingAway - true;
+        takingAway = true;
         yield return new WaitForSeconds(1);
         secondLeft -= 1;
-        textDisplay.GetComponent<Text>().text = "00:" + secondLeft;
-        takingAway = false;
-    }
-
+        if(secondLeft < 10)
+        {
+            textDisplay.GetComponent<Text>().text = "00:0 " + secondLeft;
     
-        
+        }
+        else
+        {
+             textDisplay.GetComponent<Text>().text = "00:" + secondLeft;
+           
+        }
+       
+        takingAway = false;
+    }        
     
 }
