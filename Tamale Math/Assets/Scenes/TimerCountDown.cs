@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TimerCountDown : MonoBehaviour
 {
     public GameObject textDisplay;
-    public int secondLeft = 30;
+    public int secondLeft = 50;
     public bool takingAway = false;
 
     void Start()

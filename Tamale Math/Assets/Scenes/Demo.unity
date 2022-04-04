@@ -10702,6 +10702,7 @@ GameObject:
   - component: {fileID: 982566349}
   - component: {fileID: 982566351}
   - component: {fileID: 982566350}
+  - component: {fileID: 982566352}
   m_Layer: 5
   m_Name: BottomBar
   m_TagString: Untagged
@@ -10795,6 +10796,21 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &982566352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982566348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4167eb1105a514aba892b90f2aaa05d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textDisplay: {fileID: 714045352}
+  secondLeft: 30
+  takingAway: 0
 --- !u!1001 &984868689
 PrefabInstance:
   m_ObjectHideFlags: 0
