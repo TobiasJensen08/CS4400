@@ -122,7 +122,7 @@ public class QuestionManager : MonoBehaviour
             else
             {
                 Debug.Log("Wrong");
-                // Messenger.Broadcast(GameEvent.WRONG_ANSER);
+                Messenger.Broadcast(GameEvent.WRONG_ANSER);
             }
 
             UI.enabled = false;
