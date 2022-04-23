@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+
 public class TimerCountDown : MonoBehaviour
 {
     [SerializeField]
@@ -24,7 +25,8 @@ public class TimerCountDown : MonoBehaviour
     void Start()
     {
         Load();
-        StartCoroutine(RestoreRoutine()); 
+        StartCoroutine(RestoreRoutine());
+      
 
     }
 
@@ -61,6 +63,8 @@ public class TimerCountDown : MonoBehaviour
             UpdateEnergy();
             Save();
             yield return null;
+
+
         }
 
     }
@@ -73,8 +77,7 @@ public class TimerCountDown : MonoBehaviour
             return;
         }
         TimeSpan t = nextEnergyTime - DateTime.Now;
-        string value = String.Format("{0}:{1:D2}:{2:D2}", (int)t.TotalHours, t.Minutes, t.Seconds);
-        textTimer.text = value;
+        string value = StringToDate.Format("{0}:{1:D2}:{2:D2}", (int)t.TotalHours, t.Minutes, t.Seconds);
 
     }
 
