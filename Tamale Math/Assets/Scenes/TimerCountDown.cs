@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.DateTime;
+using System;
 
 public class TimerCountDown : MonoBehaviour
 {
@@ -21,18 +23,40 @@ public class TimerCountDown : MonoBehaviour
 
     private int restoreDuration = 10; // 10 second fo testing purpose
 
+    private bool restoring = false;
+
     void Start()
     {
+       // PlayerPrefs.DeleteAll();
         Load();
         StartCoroutine(RestoreRoutine());
       
+    } 
+    
+    public void useEnergy()
+    {
+        if( totalEnergy == 0)
+        return;
 
+        totalEnergy --;
+        UpdateEnergy();
+
+        if(!restoring)
+        {
+            if(totalEnergy+1 == maxEnergy)
+            {
+                //if enrgy is full just now
+                nextEnergyTime = AddDuration(DateTime.Now, restoreDuration);
+            }
+            StartCoroutine(RestoreRoutine());
+        }
     }
 
     private IEnumerator RestoreRoutine()
     {
         UpdateEnergy();
         UpdateTimer();
+        restoring = true;
 
         while(totalEnergy < maxEnergy)
         {
@@ -63,8 +87,8 @@ public class TimerCountDown : MonoBehaviour
             Save();
             yield return null;
 
-
         }
+        restoring = false;
 
     }
 

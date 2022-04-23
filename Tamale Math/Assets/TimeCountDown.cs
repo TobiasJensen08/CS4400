@@ -77,19 +77,15 @@ public class TimerCountDown : MonoBehaviour
         textTimer.text = value;
 
     }
-
     private void UpdateEnergy()
     {
         textEnergy.text = totalEnergy.ToString();
 
     }
-
     private DateTime AddDuration(DateTime time, int duration)
     {
         return time.AddSeconds(duration);
     }
-
-
       public void Load()
     {
         totalEnergy = PlayerPrefs.GetInt("totalEnergy");
